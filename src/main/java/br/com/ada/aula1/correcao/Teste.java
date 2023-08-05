@@ -4,8 +4,6 @@ public class Teste {
 
     public static void main(String args[]) {
 
-        Agenda agenda = new Agenda();
-
         Contato contato1 = new Contato();
         contato1.nome = "joao";
         contato1.numero = "123";
@@ -15,6 +13,11 @@ public class Teste {
         contato2.nome = "maria";
         contato2.numero = "456";
         contato2.descricao = "tia";
+
+        Contato contatoADeletar = new Contato();
+        contatoADeletar.nome = "maria";
+        contatoADeletar.numero = "456";
+        contatoADeletar.descricao = "tia";
 
         Contato contato3 = new Contato();
         contato3.nome = "ronaldo";
@@ -26,7 +29,10 @@ public class Teste {
         contato4.numero = "321";
         contato4.descricao = "irmao";
 
-        agenda.contatos = new Contato[] {contato1, contato2, contato3, contato4};
+        Contato[] lista = new Contato[] {contato1, contato2, contato3, contato4};
+
+        Agenda agenda = new Agenda();
+        agenda.contatos = lista;
 
         System.out.println("Imprimindo agenda");
         agenda.imprimirAgenda();
@@ -40,9 +46,11 @@ public class Teste {
         System.out.println("ligar");
         ugo.ligar();
 
-        System.out.println("Apagando contato");
-        agenda.deletar(contato2);
+        System.out.println("Apagando contato: " + contatoADeletar);
+        agenda.deletar(contatoADeletar);
 
+        System.out.println("Contato Maria apagado");
+        System.out.println();
 
         System.out.println("Imprimindo agenda");
         agenda.imprimirAgenda();
