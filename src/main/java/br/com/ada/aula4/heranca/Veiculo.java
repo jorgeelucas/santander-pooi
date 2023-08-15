@@ -5,9 +5,9 @@ public class Veiculo {
     private String placa;
     private String cor;
     private String modelo;
-    private int ano;
+    private Integer ano;
 
-    public Veiculo(String placa, String cor, String modelo, int ano) {
+    public Veiculo(String placa, String cor, String modelo, Integer ano) {
         this.placa = placa;
         this.cor = cor;
         this.modelo = modelo;

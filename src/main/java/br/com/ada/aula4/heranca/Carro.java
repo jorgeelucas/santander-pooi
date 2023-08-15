@@ -11,6 +11,10 @@ public class Carro extends Veiculo {
         this.tipoCombustivel = tipoCombustivel;
     }
 
+    public Carro() {
+        super(null, null, null, null);
+    }
+
     @Override
     public void exibirDados() {
         super.exibirDados();
