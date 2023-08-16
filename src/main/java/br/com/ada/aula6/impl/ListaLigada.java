@@ -25,6 +25,26 @@ public class ListaLigada extends Lista {
     }
 
     @Override
+    public void remove(int idx) {
+        if (idx < 0 || idx >= this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (idx == 0) {
+            this.primeiro = this.primeiro.getProximo();
+            this.size--;
+            return;
+        }
+
+        Elemento elemento = this.primeiro;
+        for (int i = 0; i < idx - 1; i++) {
+            elemento = elemento.getProximo();
+        }
+        elemento.setProximo(elemento.getProximo().getProximo());
+        this.size--;
+    }
+
+    @Override
     public Object get(int idx) {
         Elemento elemento = this.primeiro;
         for (int i = 0; i < idx; i++) {
